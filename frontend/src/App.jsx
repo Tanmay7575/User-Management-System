@@ -13,9 +13,7 @@ function App() {
   const token=localStorage.getItem('token');
   const {user,loading}=useAuth();
 
-  if(loading){
-    return <h1>Loading....</h1>
-  }
+ 
   return (
     
     <BrowserRouter>
