@@ -1,0 +1,46 @@
+POST http://localhost:8080/api/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "fullName":"raghav",
+    "role":"user",
+    "email":"raghav@gmail.com",
+    "password":"12345678"
+}
+
+###
+
+POST http://localhost:8080/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+   "email":"rohan@gmail.com",
+    "password":"12345678"
+}
+###
+
+POST http://localhost:8080/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+      "email":"rohan@gmail.com",
+    "password":"12345678"
+}
+
+###
+GET http://localhost:8080/api/auth/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTIyZmY1Njk3ZGFjNzdkNTNmODcwNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY2OTk2MTAyLCJleHAiOjE3NjcwODI1MDJ9.iNX4KALa3Ek74frQgcq08UOV7DFt7aq6IuLsntLfyxg
+
+{
+    
+}
+
+###
+GET http://localhost:8080/api/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTIzMDYwMWVhMzkzODkxYjU0ODJhNyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2Njk5NTkwNiwiZXhwIjoxNzY3MDgyMzA2fQ.1pEgXVh5PsAm7aHN3jOY4eDnf6tV5ZcwYhXNGiBXuT4
+
+###
+PUT http://localhost:8080/api/users/69522ff5697dac77d53f8705/activate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTIzMDYwMWVhMzkzODkxYjU0ODJhNyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2Njk5NTkwNiwiZXhwIjoxNzY3MDgyMzA2fQ.1pEgXVh5PsAm7aHN3jOY4eDnf6tV5ZcwYhXNGiBXuT4
+
+
