@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "ea626e71-264c-42a4-a25a-2c90b8ac4b29",
+		"name": "User Management System API",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40339495"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Test User\",\r\n  \"email\": \"test@gmail.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Test User\",\r\n  \"email\": \"test3@gmail.com\",\r\n  \"password\": \"Password@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-tl+a6BqGxk86qX8qNIeVjknybqM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:16:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTNhNjY2MDA5NGUyNzIwYmJjOGQ2MiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY3MDg5NzY2LCJleHAiOjE3NjcxNzYxNjZ9.C2hUtpE5cbQQENieufqCUOl0W_83ZhieWRkvRP9cOAQ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Return Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"email\": \"test3@gmail.com\",\r\n  \"password\": \"Password@123\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-pZN5gWQXsWVbFd+3FcyNPA7TQuo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:16:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTNhNjY2MDA5NGUyNzIwYmJjOGQ2MiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY3MDg5Nzk2LCJleHAiOjE3NjcxNzYxOTZ9.ez-d78FLdNhSSOnmwf0FUSAqandueBJCHgLtOV94FIs\"\n}"
+						}
+					]
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Active User Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/auth/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-Y+mCshiL19RC8gAMw7Ulro064yQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:19:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6953a6660094e2720bbc8d62\",\n    \"fullName\": \"Test User\",\n    \"email\": \"test3@gmail.com\",\n    \"role\": \"user\",\n    \"status\": \"active\",\n    \"createdAt\": \"2025-12-30T10:16:06.018Z\",\n    \"updatedAt\": \"2025-12-30T10:16:36.000Z\",\n    \"__v\": 0,\n    \"lastLogin\": \"2025-12-30T10:16:35.999Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users data for Only Admin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "only see by admin",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2341"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"925-219XdIe5nNm8/0zCKT4OewbcRM4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:23:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": [\n        {\n            \"_id\": \"69522ff5697dac77d53f8705\",\n            \"fullName\": \"Tanm Khedekar\",\n            \"email\": \"fake@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T07:38:29.933Z\",\n            \"updatedAt\": \"2025-12-30T08:08:07.863Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-30T08:08:07.863Z\"\n        },\n        {\n            \"_id\": \"695230300e1b62ed8b4ac797\",\n            \"fullName\": \"rushi Khedekar\",\n            \"email\": \"rushi@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T07:39:28.172Z\",\n            \"updatedAt\": \"2025-12-30T09:18:59.097Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-30T09:18:59.092Z\"\n        },\n        {\n            \"_id\": \"695230601ea393891b5482a7\",\n            \"fullName\": \"rohan Khedekar\",\n            \"email\": \"rohan@gmail.com\",\n            \"role\": \"admin\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T07:40:16.082Z\",\n            \"updatedAt\": \"2025-12-30T06:55:18.441Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-30T04:49:19.402Z\"\n        },\n        {\n            \"_id\": \"6952521eacf102fe752930e2\",\n            \"fullName\": \"tanu\",\n            \"email\": \"tania@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T10:04:14.141Z\",\n            \"updatedAt\": \"2025-12-30T07:24:47.690Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"695255efacf102fe75293110\",\n            \"fullName\": \"tanmay\",\n            \"email\": \"rameshwar@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"inactive\",\n            \"createdAt\": \"2025-12-29T10:20:31.949Z\",\n            \"updatedAt\": \"2025-12-30T08:57:19.949Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"695257a7acf102fe75293127\",\n            \"fullName\": \"zdzdd\",\n            \"email\": \"fake12@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"inactive\",\n            \"createdAt\": \"2025-12-29T10:27:51.554Z\",\n            \"updatedAt\": \"2025-12-30T05:47:06.784Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-29T10:27:57.016Z\"\n        },\n        {\n            \"_id\": \"69525836acf102fe7529312c\",\n            \"fullName\": \"ravi\",\n            \"email\": \"ravi@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T10:30:14.011Z\",\n            \"updatedAt\": \"2025-12-29T10:30:26.236Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-29T10:30:26.236Z\"\n        },\n        {\n            \"_id\": \"69526eaefe711b77bc3eaa71\",\n            \"fullName\": \"ramesh \",\n            \"email\": \"ramesh@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T12:06:06.386Z\",\n            \"updatedAt\": \"2025-12-30T08:46:52.956Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-30T08:46:52.955Z\"\n        },\n        {\n            \"_id\": \"69526f5bfe711b77bc3eaa7b\",\n            \"fullName\": \"ramesh khedekar\",\n            \"email\": \"rakesh@gmail.com\",\n            \"role\": \"admin\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-29T12:08:59.617Z\",\n            \"updatedAt\": \"2025-12-30T10:12:54.965Z\",\n            \"__v\": 0,\n            \"lastLogin\": \"2025-12-30T10:12:54.963Z\"\n        },\n        {\n            \"_id\": \"69535cdb35c0dfc06b58886b\",\n            \"fullName\": \"rama\",\n            \"email\": \"rama@gmail.com\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-30T05:02:19.325Z\",\n            \"updatedAt\": \"2025-12-30T05:02:19.325Z\",\n            \"__v\": 0\n        }\n    ],\n    \"currentPage\": 1,\n    \"totalPages\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "Activate User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/69522ff5697dac77d53f8705/activate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"69522ff5697dac77d53f8705",
+										"activate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-lGbVekryvSFcsRBS+1/WduKAQA0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:24:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User activated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "change Password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"oldPassword\": \"12345678\",\r\n  \"newPassword\": \"Password@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/change-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://user-management-system-jn2i.vercel.app"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-lakmr+DKqfX/l24uCPnpB/kr9GQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Dec 2025 10:29:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password updated\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://template.postman-echo.com"
+		}
+	]
+}
