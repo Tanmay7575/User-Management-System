@@ -7,7 +7,7 @@ import userRoutes from "./routes/user.route.js"
 const app = express();
 
 app.use(cors({
-     origin: "https://user-management-system-three-inky.vercel.app/",
+     origin: "https://user-management-system-three-inky.vercel.app",
 }
 
 ));
