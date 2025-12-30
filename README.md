@@ -4,6 +4,11 @@
 The User Management System is a full-stack web application designed to manage user accounts securely with authentication and role-based authorization. The system supports Admin and User roles, allowing administrators to manage users while regular users can manage their own profiles.
 
 This project demonstrates backend API development, secure authentication, role-based access control (RBAC), frontend integration, and cloud deployment.
+
+Demo Login to Admin
+ Email: rakesh@gmail.com
+ password: 12345678
+
 🛠 Tech Stack
 Backend
 Node.js
@@ -49,7 +54,11 @@ Password hashing using bcrypt
 Protected routes with middleware
 Role-based access control:
  Admin → Manage users
+ Demo Login to Admin
+ Email: rakesh@gmail.com
+ password: 12345678
  User → Manage own profile
+
 
 
 
