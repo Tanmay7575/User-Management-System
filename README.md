@@ -23,34 +23,6 @@ Backend: Render
 Frontend: Vercel
 Database: MongoDB Atlas
 
-Project Structure:
-
-user-management-system/
-│
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   ├── services/
-│   ├── tests/
-│   ├── app.js
-│   └── server.js
-│
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── services/
-│   │   └── App.jsx
-│   └── vite.config.js
-│
-├── postman/
-│   └── User_Management_System.postman_collection.json
-│
-├── README.md
-└── .gitignore
 Backend .env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
