@@ -30,7 +30,7 @@ export const signup = async(req, res)=>{
         {expiresIn: "1d"}
     );
 
-    res.status(201).json({token});
+    res.status(201).json({token,user});
 };
 
 export const login = async(req,res)=>{
@@ -55,7 +55,7 @@ export const login = async(req,res)=>{
         process.env.JWT_SECRET,
         {expiresIn:"1d"}
     );
-    res.json({token});
+    res.json({token,user});
 }
 
 export const currentUser = async(req,res)=>{
